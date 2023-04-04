@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Example of Loop</title>
+</head>
+<body>
+	<h1>Going to traverse elements in collection...</h1>
+	<h2 th:text="${a}"></h2>
+
+	<!-- each loop -->
+	<ul>
+		<li th:each="m: ${a}"><span th:text="${m}"></span></li>
+	</ul>
+
+	Index
+	<ul>
+		<li th:each="m,status : ${a}"><span
+			th:text="${status.index}+' '+${m}"> </span></li>
+	</ul>
+
+	Count
+
+	<ul>
+		<li th:each="m,status : ${a}"><span
+			th:text="${status.count}+' '+${m}"></span></li>
+	</ul>
+
+	Even
+
+	<ol>
+		<li th:each="m,status : ${a}"><span
+			th:style="${status.even} ? 'font-weight: bold;color:green':'color:red'"
+			th:text="${status.even}+' ' +${m}"> </span></li>
+	</ol>
+
+	Odd
+
+	<ol>
+		<li th:each="m,status : ${a}"><span
+			th:style="${status.odd} ? 'font-weight: bold;color:green':'color:red'"
+			th:text="${status.odd}+' '+${m}"></span></li>
+	</ol>
+
+	first
+
+	<ul>
+		<li th:each="m,status : ${a}"><span
+		th:style="${status.first} ? 'font-weight: bold;color:green':'color:red'"
+			th:text="${status.first}+' '+${m}"></span></li>
+	</ul>
+
+	last
+
+	<ul>
+		<li th:each="m,status : ${a}"><span
+		th:style="${status.last} ? 'font-weight: bold;color:green' : 'color:red'"
+			th:text="${status.last}+' '+${m}"></span></li>
+	</ul>
+</body>
+</html>

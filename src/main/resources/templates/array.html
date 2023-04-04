@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" xmlns:th=http;//www.thymeleaf.org>
+<head>
+<meta charset="UTF-8" />
+<title>Document</title>
+</head>
+<body>
+
+	<p>
+		...<span th:text="${a.length}"></span>...
+	</p>
+	<h1 th:text="'first value is:- '+${a[0]}"></h1>
+
+	Looping
+	<ul th:each="x : ${a}">
+		<li th:text="${x}"></li>
+	</ul>
+
+	<h1 th:each="z : ${a}" th:text="${z}"></h1>
+</body>
+</html>
